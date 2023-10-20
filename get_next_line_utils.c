@@ -6,24 +6,16 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:35:24 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/10/19 13:48:03 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 21:34:47 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*buffer_total_clear(int fd, char **buffer, char *line)
+char	*free_line(char **line)
 {
-	size_t	i;
-
-	if (fd >= 0 && fd < FOPEN_MAX)
-	{
-		i = 0;
-		while (buffer && buffer[fd][i] && i < BUFFER_SIZE)
-			buffer[fd][i++] = '\0';
-	}
-	if (line)
-		free(line);
+	if (*line)
+		free(*line);
 	return (NULL);
 }
 

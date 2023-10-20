@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:28:08 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/10/19 13:50:28 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 21:34:58 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ char	*get_next_line(int fd)
 
 	line = NULL;
 	if (BUFFER_SIZE <= 0 || fd < 0 || fd >= FOPEN_MAX)
-		return (buffer_total_clear(fd, (char **) buffer, line));
+		return (NULL);
 	while (1)
 	{
 		if (buffer[0] == '\0')
 		{
 			read_result = read(fd, buffer, BUFFER_SIZE);
 			if (read_result == -1)
-				return (buffer_total_clear(fd, NULL, line));
+				return (free_line(&line));
 			if (read_result == 0)
 				return (line);
 		}

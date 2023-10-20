@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:29:30 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/10/19 13:49:09 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 21:35:15 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		line_updater(char **line, char buffer[]);
 int		ft_strlenm(char const *s1);
 char	*ft_strjoinm(char const *s1, char const *s2);
 void	buffer_clear(char *buffer);
-char	*buffer_total_clear(int fd, char **buffer, char *line);
+char	*free_line(char **line);
 
 /* END OF UTILS */
 
